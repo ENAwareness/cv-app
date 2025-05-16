@@ -47,7 +47,7 @@ export default function EducationForm() {
           value={info.data}
           onChange={handleChange}
         />
-        <button onClick={handleSubmit}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     );
   } else {
