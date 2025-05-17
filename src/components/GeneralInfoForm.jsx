@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function GeneralInfoForm() {
+export default function GeneralInfoForm({ onSubmit }) {
   const [isEditing, setIsEditing] = useState(true);
   const [info, setInfo] = useState({
     name: '',
@@ -13,9 +13,10 @@ export default function GeneralInfoForm() {
     setInfo((prev) => ({ ...prev, [name]: value }));
   }
 
-  function handlesubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setIsEditing(false);
+    onSubmit(info);
   }
 
   function handleEdit() {
@@ -24,7 +25,7 @@ export default function GeneralInfoForm() {
 
   if (isEditing) {
     return (
-      <form onSubmit={handlesubmit}>
+      <form onSubmit={handleSubmit}>
         <h2>General Information</h2>
         <input
           type="text"

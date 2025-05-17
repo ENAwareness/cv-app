@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-export default function EducationForm() {
+export default function EducationForm({ onSubmit }) {
   const [isEditing, setIsEditing] = useState(true);
   const [info, setInfo] = useState({
     school: '',
     title: '',
-    data: ''
+    date: ''
   });
 
   function handleChange(e) {
@@ -16,6 +16,7 @@ export default function EducationForm() {
   function handleSubmit(e) {
     e.preventDefault();
     setIsEditing(false);
+    onSubmit(info);
   }
 
   function handleEdit() {
@@ -42,9 +43,9 @@ export default function EducationForm() {
         />
         <input
           type="text"
-          name="data"
-          placeholder="Data of Study"
-          value={info.data}
+          name="date"
+          placeholder="Date of Study"
+          value={info.date}
           onChange={handleChange}
         />
         <button type="submit">Submit</button>
@@ -56,7 +57,7 @@ export default function EducationForm() {
         <h2>Educational Experience</h2>
         <p>School: {info.school}</p>
         <p>Title: {info.title}</p>
-        <p>Data: {info.data}</p>
+        <p>Date: {info.date}</p>
         <button onClick={handleEdit}>Edit</button>
       </div>
     );

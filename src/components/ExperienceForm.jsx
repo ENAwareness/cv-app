@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-export default function ExperienceForm() {
+export default function ExperienceForm({ onSubmit }) {
   const [isEditing, setIsEditing] = useState(true);
   const [info, setInfo] = useState({
     company: '',
     position: '',
     responsibilities: '',
-    dataFrom: '',
-    dataUntil: ''
+    dateFrom: '',
+    dateUntil: ''
   });
 
   function handleChange(e) {
@@ -18,6 +18,7 @@ export default function ExperienceForm() {
   function handleSubmit(e) {
     e.preventDefault();
     setIsEditing(false);
+    onSubmit(info);
   }
 
   function handleEdit() {
@@ -27,6 +28,7 @@ export default function ExperienceForm() {
   if (isEditing) {
     return (
       <form onSubmit={handleSubmit}>
+        <h2>Practical Experience</h2>
         <input
           type="text"
           name="company"
@@ -47,17 +49,17 @@ export default function ExperienceForm() {
           value={info.responsibilities}
           onChange={handleChange}></textarea>
         <input
-          type="data"
-          name="dataFrom"
+          type="date"
+          name="dateFrom"
           placeholder="From"
-          value={info.dataFrom}
+          value={info.dateFrom}
           onChange={handleChange}
         />
         <input
-          type="data"
-          name="dataUntil"
+          type="date"
+          name="dateUntil"
           placeholder="Until"
-          value={info.dataUntil}
+          value={info.dateUntil}
           onChange={handleChange}
         />
         <button type="submit">Submit</button>
@@ -70,8 +72,8 @@ export default function ExperienceForm() {
         <p>Company: {info.company}</p>
         <p>Position: {info.position}</p>
         <p>Responsibilities: {info.responsibilities}</p>
-        <p>From: {info.dataFrom}</p>
-        <p>Until: {info.dataUntil}</p>
+        <p>From: {info.dateFrom}</p>
+        <p>Until: {info.dateUntil}</p>
         <button onClick={handleEdit}>Edit</button>
       </div>
     );
