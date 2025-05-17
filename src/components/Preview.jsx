@@ -1,3 +1,5 @@
+import '../styles/preview.css';
+
 export default function Preview({ general, education, experience }) {
   return (
     <div className="preview">
