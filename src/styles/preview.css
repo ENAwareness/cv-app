@@ -1,21 +1,21 @@
 .preview {
-  border: 2px solid #ccc;
+  border: 2px solid #546a7b;
   padding: 20px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #e1dfdd;
 }
 
 .preview h2,
 h3 {
   margin-top: 0;
   margin-bottom: 0px;
-  color: #333;
+  color: #546a7b;
 }
 
 .preview p {
   margin: 5px 0;
   line-height: 1.5;
-  color: #333;
+  color: #2d3142;
 }
 
 .general-preview {

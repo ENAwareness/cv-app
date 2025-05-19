@@ -49,14 +49,14 @@ export default function ExperienceForm({ onSubmit }) {
           value={info.responsibilities}
           onChange={handleChange}></textarea>
         <input
-          type="date"
+          type="text"
           name="dateFrom"
           placeholder="From"
           value={info.dateFrom}
           onChange={handleChange}
         />
         <input
-          type="date"
+          type="text"
           name="dateUntil"
           placeholder="Until"
           value={info.dateUntil}
