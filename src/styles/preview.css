@@ -8,6 +8,7 @@
 .preview h2,
 h3 {
   margin-top: 0;
+  margin-bottom: 0px;
   color: #333;
 }
 
@@ -15,4 +16,13 @@ h3 {
   margin: 5px 0;
   line-height: 1.5;
   color: #333;
+}
+
+.general-preview {
+  margin-top: 20px;
+}
+
+.education-preview,
+.general-preview {
+  margin-bottom: 20px;
 }
